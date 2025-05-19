@@ -13,5 +13,14 @@
     </html>
   </xsl:template>
   
-  
+  <xsl:template match="hobby">
+    <div class="hobby">
+      <h2><xsl:value-of select="name"/></h2>
+      <p><xsl:value-of select="description"/></p>
+      <p>Popularity: <xsl:value-of select="popularity"/></p>
+      <xsl:if test="@difficulty">
+        <p>Difficulty: <xsl:value-of select="@difficulty"/></p>
+      </xsl:if>
+    </div>
+  </xsl:template>
 </xsl:stylesheet>
